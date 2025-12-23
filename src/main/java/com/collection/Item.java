@@ -73,4 +73,30 @@ public class Item {
         return String.format("Item: %s\n  Category: %s\n  Description: %s\n  Acquisition Date: %s\n  Paid Value: %.2f\n  Estimated Value: %.2f",
                 name, category, description, acquisitionDate, paidValue, estimatedValue);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return Double.compare(item.estimatedValue, estimatedValue) == 0 &&
+                Double.compare(item.paidValue, paidValue) == 0 &&
+                name.equals(item.name) &&
+                description.equals(item.description) &&
+                category.equals(item.category) &&
+                acquisitionDate.equals(item.acquisitionDate);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + description.hashCode();
+        result = 31 * result + category.hashCode();
+        result = 31 * result + acquisitionDate.hashCode();
+        long temp = Double.doubleToLongBits(estimatedValue);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(paidValue);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
 }

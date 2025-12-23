@@ -2,6 +2,7 @@
 # Compile script for Collection Management System
 
 echo "Compiling Collection Management System..."
+mkdir -p bin
 javac -d bin src/main/java/com/collection/*.java
 
 if [ $? -eq 0 ]; then

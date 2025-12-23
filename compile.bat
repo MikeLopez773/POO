@@ -2,6 +2,7 @@
 REM Compile script for Collection Management System (Windows)
 
 echo Compiling Collection Management System...
+if not exist bin mkdir bin
 javac -d bin src\main\java\com\collection\*.java
 
 if %ERRORLEVEL% EQU 0 (

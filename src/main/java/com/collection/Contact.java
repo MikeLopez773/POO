@@ -50,4 +50,24 @@ public class Contact {
         return String.format("Contact: %s (%s)\n  Email: %s\n  Phone: %s",
                 name, type, email, phone);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contact contact = (Contact) o;
+        return name.equals(contact.name) &&
+                email.equals(contact.email) &&
+                phone.equals(contact.phone) &&
+                type.equals(contact.type);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + email.hashCode();
+        result = 31 * result + phone.hashCode();
+        result = 31 * result + type.hashCode();
+        return result;
+    }
 }
