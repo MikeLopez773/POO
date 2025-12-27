@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="30.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Barra superior -->
+      <ToolBar styleClass="tool-bar">
+         <items>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" text="Estadísticas de la Colección" />
+         </items>
+      </ToolBar>
+
+      <!-- Resumen numérico (tarjetas) -->
+      <GridPane alignment="CENTER" hgap="30.0" vgap="20.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+         </columnConstraints>
+         <children>
+            <VBox alignment="CENTER" styleClass="dashboard-card" GridPane.columnIndex="0">
+               <children>
+                  <Label styleClass="card-value" text="€ 0,00" />
+                  <Label styleClass="card-subtitle" text="Valor total estimado" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" styleClass="dashboard-card" GridPane.columnIndex="1">
+               <children>
+                  <Label styleClass="card-value" text="0" />
+                  <Label styleClass="card-subtitle" text="Ítems totales" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" styleClass="dashboard-card" GridPane.columnIndex="2">
+               <children>
+                  <Label style="-fx-text-fill: #28a745;" styleClass="card-value" text="€ 0,00" />
+                  <Label styleClass="card-subtitle" text="Ganancia potencial" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+         </padding>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+
+      <!-- Gráficos lado a lado -->
+      <HBox alignment="CENTER" spacing="40.0">
+         <children>
+            <!-- PieChart vacío (datos se añadirán en código) -->
+            <VBox alignment="CENTER" spacing="10.0">
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #343a40;" text="Distribución por categorías" />
+               <PieChart prefHeight="300.0" prefWidth="400.0" title="Valor por categoría" />
+            </VBox>
+
+            <!-- LineChart vacío (datos se añadirán en código) -->
+            <VBox alignment="CENTER" spacing="10.0">
+               <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #343a40;" text="Evolución del valor total" />
+               <LineChart prefHeight="300.0" prefWidth="500.0" title="Valor estimado en el tiempo">
+                  <xAxis>
+                     <CategoryAxis label="Mes" />
+                  </xAxis>
+                  <yAxis>
+                     <NumberAxis label="Valor (€)" />
+                  </yAxis>
+               </LineChart>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
+      </HBox>
+
+      <!-- Mensaje final -->
+      <Label styleClass="placeholder-label" text="Selecciona ítems para ver estadísticas detalladas" />
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="20.0" />
+   </padding>
+</VBox>

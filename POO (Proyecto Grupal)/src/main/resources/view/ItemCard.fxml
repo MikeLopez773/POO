@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="300.0" minWidth="250.0" prefHeight="383.0" prefWidth="280.0" spacing="10.0" styleClass="item-card" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Foto del ítem (placeholder) -->
+      <ImageView fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/1671.png" /> <!-- Cambia por una imagen real después -->
+         </image>
+      </ImageView>
+
+      <!-- Nombre del ítem -->
+      <Label styleClass="item-name" text="Nombre del Ítem" />
+
+      <!-- Valor pagado y estimado -->
+      <Label styleClass="item-price-paid" text="Pagado: € 50.00" />
+      <Label styleClass="item-price-estimated" text="Estimado: € 120.00" />
+
+      <!-- Fecha de adquisición -->
+      <Label styleClass="item-date" text="Adquirido: 15/05/2023" />
+
+      <!-- Categoría -->
+      <Label styleClass="item-category" text="Categoría: Libros" />
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</VBox>

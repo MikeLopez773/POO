@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Barra superior -->
+      <ToolBar styleClass="tool-bar">
+         <items>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" text="Contactos" />
+            <Region HBox.hgrow="ALWAYS" />  <!-- Solo HBox.hgrow aquí -->
+            <TextField prefWidth="250.0" promptText="Buscar contacto..." />
+            <Button styleClass="button-primary" text="Añadir contacto" />
+         </items>
+      </ToolBar>
+
+      <!-- Tabla con scroll -->
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+         <content>
+            <TableView>
+               <columns>
+                  <TableColumn prefWidth="180.0" text="Nombre" />
+                  <TableColumn prefWidth="220.0" text="Email" />
+                  <TableColumn prefWidth="150.0" text="Teléfono" />
+                  <TableColumn prefWidth="300.0" text="Notas" />
+                  <TableColumn prefWidth="120.0" text="Acciones" />
+               </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+
+      <!-- Mensaje cuando esté vacío -->
+      <Label styleClass="placeholder-label" text="No hay contactos aún. Pulsa 'Añadir contacto' para comenzar." />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="0.0" />
+   </padding>
+</VBox>

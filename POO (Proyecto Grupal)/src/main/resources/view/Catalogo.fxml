@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Barra superior: título, búsqueda y filtro -->
+      <ToolBar styleClass="tool-bar">
+         <items>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" text="Mi Catálogo" />
+            <Region VBox.hgrow="ALWAYS" />
+            <TextField prefWidth="200.0" promptText="Buscar ítem..." />
+            <ComboBox prefWidth="200.0" promptText="Todas las categorías" />
+         </items>
+      </ToolBar>
+
+      <!-- Grid de tarjetas con scroll -->
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+         <content>
+            <TilePane hgap="20.0" prefColumns="4" tileAlignment="TOP_CENTER" vgap="20.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <!-- 12 tarjetas de ejemplo (repetidas de ItemCard) -->
+                  <!-- Puedes copiar-pegar más o menos según quieras -->
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+                  <fx:include source="ItemCard.fxml" />
+               </children>
+            </TilePane>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

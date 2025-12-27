@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <ToolBar styleClass="tool-bar">
+         <items>
+            <!-- Botones del menú -->
+            <Button fx:id="btnCatalogo" text="Catálogo" styleClass="button" />
+            <Button fx:id="btnContactos" text="Contactos" styleClass="button" />
+            <Button fx:id="btnEstadisticas" text="Estadísticas" styleClass="button" />
+
+            <!-- Espaciador para empujar el título a la derecha -->
+            <Region HBox.hgrow="ALWAYS" />
+
+            <!-- Título de la app (mantenido como Label) -->
+            <Label text="As Minhas Coleções" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;" />
+         </items>
+      </ToolBar>
+   </top>
+   <center>
+      <VBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Bienvenido a tu catálogo de colecciones" styleClass="welcome-title" />
+            <GridPane alignment="CENTER" hgap="30.0" vgap="20.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+               </columnConstraints>
+               <children>
+                  <!-- Tarjeta 1: Valor total estimado -->
+                  <VBox alignment="CENTER" spacing="10.0" styleClass="dashboard-card" GridPane.columnIndex="0">
+                     <children>
+                        <Label text="€ 0,00" styleClass="card-value" />
+                        <Label text="Valor total estimado" styleClass="card-subtitle" />
+                     </children>
+                  </VBox>
+
+                  <!-- Tarjeta 2: Ítems totales -->
+                  <VBox alignment="CENTER" spacing="10.0" styleClass="dashboard-card" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="0" styleClass="card-value" />
+                        <Label text="Ítems en colección" styleClass="card-subtitle" />
+                     </children>
+                  </VBox>
+
+                  <!-- Tarjeta 3: Ganancia potencial -->
+                  <VBox alignment="CENTER" spacing="10.0" styleClass="dashboard-card" GridPane.columnIndex="2">
+                     <children>
+                        <Label text="€ 0,00" styleClass="card-value" style="-fx-text-fill: #28a745;" />
+                        <Label text="Ganancia potencial" styleClass="card-subtitle" />
+                     </children>
+                  </VBox>
+               </children>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+            </GridPane>
+            <Label text="Selecciona una sección del menú para comenzar" styleClass="placeholder-label" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" styleClass="status-bar">
+         <children>
+            <Label text="Último guardado: 24/12/2025" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label text="Aplicación lista | Versión 1.0" />
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="15.0" right="15.0" top="8.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
